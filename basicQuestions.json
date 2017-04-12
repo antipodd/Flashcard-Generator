@@ -1,0 +1,45 @@
+{
+	"basicQuestions" : [
+		{
+			"question" : "Who is the current President of the United States?",
+			"answer" :  "Donald Trump"
+		},
+		{
+			"question" : "What do we call the first ten amendments to the Constitution?",
+			"answer" : "The Bill of Rights"
+		},
+		{
+			"question" : "How many amendments does the Constitution have?",
+			"answer" : "27"
+		},
+		{
+			"question" : "Who is in charge of the executive branch?",
+			"answer" : "The President"
+		},
+		{
+			"question" : "How many U.S. Senators are there?",
+			"answer" : "100"
+		},
+		{
+			"question" : "We elect a U.S. Senator for how many years?",
+			"answer" : "6"
+		},
+		{
+			"question" : "The House of Representatives has how many voting members?",
+			"answer" : "435"
+		},
+		{
+			"question" : "We elect a U.S. Representatives for how many years?",
+			"answer" : "2"
+		},
+		{
+			"question" : "We elect a President for how many years?",
+			"answer" : "4"
+		},
+		{
+			"question" : "In what month do we vote for President?",
+			"answer" : "November"
+		}
+	]
+}
+			
