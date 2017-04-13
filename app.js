@@ -4,8 +4,24 @@ var flashcards = require("./flashcards.js");
 var inquirer = require("inquirer");
 //require basic flash card questions and answers
 var basicQuestions = require("./basicQuestions.json");
+//require cloze flash card full text and cloze
+var clozeQuestions = require("./clozeQuestions.json");
 
-var counter = 0;
+//construct Basic Questions array
+var basicQuestionsArray = [];
+for (var i = 0; i < basicQuestions.basicQuestions.length; i++) {
+	var basicObject =  flashcards.BasicCard(basicQuestions.basicQuestions[i].question, basicQuestions.basicQuestions[i].answer);
+	basicQuestionsArray.push(basicObject);
+}
+
+//construct Cloze flashcard array
+var clozeFlashCardArray = [];
+for (var i = 0; i < clozeQuestions.clozeQuestions.length; i++) {
+	var clozeObject = flashcards.ClozeCard(clozeQuestions.clozeQuestions[i].fullText, clozeQuestions.clozeQuestions[i].cloze);
+	clozeFlashCardArray.push(clozeObject);
+}
+
+var counter = 0;	
 
 inquirer.prompt([
 
@@ -37,23 +53,43 @@ inquirer.prompt([
 		if(user.flashcards === "Basic Flashcards") {
 			displayBasicFlashCard();
 		}
+		if(user.flashcards === "Cloze Flashcards") {
+			displayClozeFlashCard();
+		}
 	}
 });
 
 var displayBasicFlashCard = function() {
-	if (counter < basicQuestions.basicQuestions.length) {
+	if (counter < basicQuestionsArray.length) {
 		inquirer.prompt([
 			{
 				type: "input",
-				message : basicQuestions.basicQuestions[counter].question,
+				message : basicQuestionsArray[counter].front,
 				name: "answer"
 			}
 		]).then(function(answered) {
-			console.log("Your answer:" + answered.answer);
-			console.log("Correct answer:" + basicQuestions.basicQuestions[counter].answer)
+			console.log("Your answer: " + answered.answer);
+			console.log("Correct answer: " + basicQuestionsArray[counter].back);
+			counter++;
+			displayBasicFlashCard();
 		});
-		counter++;
-		displayBasicFlashCard();
+	}
+}
+
+var displayClozeFlashCard = function() {
+	if (counter < clozeFlashCardArray.length) {
+		inquirer.prompt([
+			{
+				type: "input",
+				message : clozeFlashCardArray[counter].partial(),
+				name: "answer"
+			}
+		]).then(function(answered) {
+			console.log("Your answer: " + answered.answer);
+			console.log("Correct answer: " + clozeFlashCardArray[counter].fullText());
+			counter++;
+			displayClozeFlashCard();
+		});
 	}
 }
 

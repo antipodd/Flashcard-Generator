@@ -1,0 +1,44 @@
+{
+	"clozeQuestions" : [
+		{
+			"fullText" : "George Washington was the first president of the United States.",
+			"cloze" : "George Washington"
+		},
+		{
+			"fullText" : "Donald Trump is the current President of the United States.",
+			"cloze" : "Donald Trump"
+		},
+		{
+			"fullText" : "There are 27 amendments to the U.S. Constitution",
+			"cloze" : "27"
+		},
+		{
+			"fullText" : "A U.S. Senator is elected for 6 years",
+			"cloze" : "Senator"
+		},
+		{
+			"fullText" : "The first ten amendments to the Constitution are known as the Bill of Rights",
+			"cloze" : "Bill of Rights"
+		},
+		{
+			"fullText" : "The Supreme Court is the highest court in the United States",
+			"cloze" : "Supreme Court"
+		},
+		{
+			"fullText" : "John Roberts is the Chief Justice of the United States",
+			"cloze" : "Chief Justice"
+		},
+		{	
+			"fullText" : "Springfield is the capital of Illinois",
+			"cloze" : "Springfield"
+		},
+		{
+			"fullText" : "Independence Day is celebrated on July 4",
+			"cloze" : "Independence Day"
+		},
+		{
+			"fullText" : "Woodrow Wilson was President of the United States during World War I",
+			"cloze" : "Woodrow Wilson"
+		}
+	]
+}

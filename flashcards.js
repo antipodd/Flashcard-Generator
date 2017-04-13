@@ -36,16 +36,26 @@ ClozeCard.prototype.fullText = function() {
 	return this.text;
 }
 
-var firstPresident = BasicCard("Who was the first president of the United States?", "George Washington");
+//var firstPresident = BasicCard("Who was the first president of the United States?", "George Washington");
 
-var firstPresidentCloze = ClozeCard("George Washington was the first president of the United States.", "George Washington");
+//var firstPresidentCloze = ClozeCard("George Washington was the first president of the United States.", "George Washington");
 
-console.log(firstPresidentCloze.fullText());
+//console.log(firstPresidentCloze.fullText());
 
-console.log(firstPresidentCloze.clozeText());
+//console.log(firstPresidentCloze.clozeText());
 
-console.log(firstPresidentCloze.partial());
+//console.log(firstPresidentCloze.partial());
 
-var brokenCloze = ClozeCard("This doesn't work", "oops");
+//var brokenCloze = ClozeCard("This doesn't work", "oops");
 
-console.log(brokenCloze.partial());
+//console.log(brokenCloze.partial());
+
+//module.exports.BasicCard = BasicCard;
+//module.exports.ClozeCard = ClozeCard;
+
+module.exports = {
+  BasicCard: BasicCard, 
+  ClozeCard: ClozeCard
+}
+
+// window === global
