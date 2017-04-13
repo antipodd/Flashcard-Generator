@@ -73,6 +73,23 @@ var displayBasicFlashCard = function() {
 			counter++;
 			displayBasicFlashCard();
 		});
+	} else {
+		inquirer.prompt([
+			{
+				type: "confirm",
+				message: "Studied all flashcards, would you like to study them again?",
+				name: "confirm",
+				default: true
+			}
+		]).then(function(user) {
+			if (user.confirm) {
+				counter = 0;
+				console.log(counter);
+				displayBasicFlashCard();
+			} else {
+				console.log("Go out and play!");
+			}
+		});
 	}
 }
 
@@ -86,11 +103,27 @@ var displayClozeFlashCard = function() {
 			}
 		]).then(function(answered) {
 			console.log("Your answer: " + answered.answer);
-			console.log("Correct answer: " + clozeFlashCardArray[counter].fullText());
+			console.log("Complete answer: " + clozeFlashCardArray[counter].fullText());
 			counter++;
 			displayClozeFlashCard();
+		});
+	} else {
+		inquirer.prompt([
+			{
+				type: "confirm",
+				message: "Studied all flashcards, would you like to study them again?",
+				name: "confirm",
+				default: true
+			}
+		]).then(function(user) {
+			if (user.confirm) {
+				counter = 0;
+				displayClozeFlashCard();
+			} else {
+				console.log("Go out and play!");
+			}
 		});
 	}
 }
 
-//console.log(basicQuestions.basicQuestions.length);
+
